@@ -5,6 +5,10 @@
 $primary: #f76809;
 $primary-dark: #b95905;
 $secondary: #6f13e2;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
 $gray: #f2f2f2;
 $gray-dark: #7a7a7c;
 $dark: #343a40;
@@ -12,6 +16,10 @@ $dark: #343a40;
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+  "info": $info,
   "gray": $gray,
   "dark": $dark
 );
