@@ -65,6 +65,18 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts" !defa
 }
 
 /*=======================================================*/
+/* GENERAL ELEMENTS                                      */
+/*=======================================================*/
+
+input, select {
+  font-size: 12px !important;
+  height: 42px !important;
+  border: 1px $primary solid !important;
+  color: $gray-dark !important;
+  border-radius: 3px !important; 
+}
+
+/*=======================================================*/
 /* STYLE                                                 */
 /*=======================================================*/
 
@@ -74,11 +86,12 @@ body {
   font-size: 14px;
 }
 .header {
-  height: 100px;
+  min-height: 100px;
   background: $primary;
   filter: saturate(1.3);
   color: $white;
   display: flex;
+  flex-flow: wrap;
   align-items: center;
   text-align: center;
   &__logo {
@@ -118,11 +131,43 @@ body {
   }
 }
 .main {
+  position: relative;
 	&__bg {
 		min-height: 100px;
 		background-color: $secondary;
     filter: saturate(1.3);
 	}
+  &__form {
+    padding: 0 350px;
+    margin-bottom: 90px;
+    &--image {
+      z-index: 10;
+      position: absolute;
+      height: 400px;
+      width: 401px;
+      bottom: 0;
+      left: -30px;
+    }
+    & form {
+      z-index: 9;
+      background: $white;
+      margin-top: -50px;
+      padding: 20px 50px;
+      & h3 {
+        font-weight: 600;
+      }
+      & label {
+        display: none;
+      }
+      & button {
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        height: 50px;
+      }
+    }
+  }
 }
 .cards {
   width: 60%;
@@ -159,7 +204,7 @@ body {
   }
 }
 .footer {
-  height: 100px;
+  min-height: 100px;
   background: $gray;
 	display: flex;
 	align-items: center;
@@ -197,4 +242,98 @@ body {
 			}
 		}
 	}
+}
+
+/*=======================================================*/
+/* RESPONSIVE                                            */
+/*=======================================================*/
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 20px;
+    &__info {
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 20px;
+      &--line-1 {
+        line-height: 14px;
+      }
+      &--line-2 {
+        padding: 0 !important;
+        padding-left: 10px !important;
+        display: block !important;
+      }
+    }
+  }
+  .cards {
+    &__item {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      &:first-child {
+        margin-top: 10px;
+      }
+    }
+  }
+  .footer {
+    padding: 20px 0;
+    &__copyright {
+      text-align: center;
+    }
+    &__social {
+      margin-top: 15px;
+      text-align: center;
+      justify-content: center;
+      & ul {
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .header {
+    &__info {
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 20px;
+      &--line-1 {
+        line-height: 14px;
+      }
+      &--line-2 {
+        padding: 0 !important;
+        padding-left: 10px !important;
+        display: none;
+      }
+    }
+  }
+  .main {
+    &__form {
+      padding: 20px !important;
+      margin-bottom: 60px;
+      &--image {
+        display: none;
+      }
+    }
+  }
+  .cards {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .main {
+    &__form {
+      padding: 0 200px;
+      &--image {
+        left: -115px;
+      }
+    }
+  }
+  .cards {
+    width: 80%;
+  }
 }
