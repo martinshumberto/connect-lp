@@ -64,6 +64,32 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts" !defa
   }
 }
 
+@property --number {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --temp {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --v1 {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+#header-counter {
+  transition: --number 5s;
+  --temp: var(--number);
+  --v1: max(var(--temp) - 0.5, 0);
+  counter-reset: v1 var(--v1) 
+}
+#header-counter::before {
+  content: counter(v1);
+}
+
 /*=======================================================*/
 /* GENERAL ELEMENTS                                      */
 /*=======================================================*/
@@ -114,8 +140,8 @@ body {
       }
     }
     &--line-2 {
-			align-self: flex-end;
-    	padding: 0 85px;
+			text-align: center;
+      padding-left: 180px;
     }
   }
   &__time {
