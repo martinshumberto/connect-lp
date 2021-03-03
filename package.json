@@ -1,0 +1,16 @@
+{
+  "name": "connect-lp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Humberto Martins <humberto@consilio.com.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "bootstrap": "^5.0.0-beta2"
+  }
+}
